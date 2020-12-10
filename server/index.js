@@ -26,10 +26,10 @@ app.get('/bundles', (req, res) => {
         .then( (secondBundle) => {
           axios.get('http://localhost:8000/bundle.js')
            .then( (thirdBundle) => {
-            //  axios.get('http://localhost:5001/bundle.js')
-            //   .then( (fourthBundle) => {
-        res.send(`${firstBundle.data}${secondBundle.data}${thirdBundle.data}`);
-     //   })
+             axios.get('http://localhost:5001/bundle.js')
+              .then( (fourthBundle) => {
+        res.send(`${firstBundle.data}${secondBundle.data}${thirdBundle.data}${fourthBundle.data}`);
+       })
       })
     })
   })
