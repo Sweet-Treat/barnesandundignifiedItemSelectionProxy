@@ -14,7 +14,7 @@ var reviewsURL = 'http://3.140.58.207:8000'
 
 // item selection
 app.get('/product/:isbn/formats', (req, res) => {
-  axios.get(`${itemSelectionURL}/product/${req.params.isbn13}/formats`)
+  axios.get(`${itemSelectionURL}/product/${req.params.isbn}/formats`)
     .then((response)=> {
       res.status(200).send(response.data);
     })
