@@ -7,10 +7,10 @@ var cors = require('cors');
 app.use(cors());
 app.use(express.static('client/dist'));
 
-var itemSelectionURL = 'http://18.188.228.195:3001'
-var productDetailsURL = 'http://3.16.221.35:5001'
-var reviewsURL = 'http://3.140.58.207:8000'
-
+var itemSelectionURL = 'http://18.188.228.195:3001';
+var productDetailsURL = 'http://3.16.221.35:5001';
+var reviewsURL = 'http://3.140.58.207:8000';
+var alsoBoughtURL = 'http://54.183.241.255:3004'
 
 // item selection
 app.get('/product/:isbn/formats', (req, res) => {
@@ -115,7 +115,7 @@ app.put('/books/:identifier/review/:id', (req, res) => {
 
 // also bought service
 app.get('/products/:rootIsbn/alsoBought', (req, res) => {
-  axios.get(`http://localhost:3004/products/${req.params.rootIsbn}/alsoBought`)
+  axios.get(`${alsoBoughtURL}/products/${req.params.rootIsbn}/alsoBought`)
   .then((response)=> {
     res.status(200).send(response.data);
   })
