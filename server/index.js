@@ -10,7 +10,7 @@ app.use(express.static('client/dist'));
 var itemSelectionURL = 'http://18.188.228.195:3001';
 var productDetailsURL = 'http://3.16.221.35:5001';
 var reviewsURL = 'http://3.140.58.207:8000';
-var alsoBoughtURL = 'http://54.183.241.255:3004'
+var alsoBoughtURL = 'http://54.176.137.254:3004'
 
 // item selection
 app.get('/product/:isbn/formats', (req, res) => {
